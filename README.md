@@ -1,16 +1,76 @@
-# React + Vite
+# 🎬 Movie Explorer App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern **React application** that allows users to discover and search **trending movies** in real time.  
+The app fetches live movie data from **TMDB (The Movie Database)** and focuses on performance, clean UI, and best frontend practices.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+- 🔍 **Search Movies** – Search movies by title with real-time results
+- ⏳ **Debounced Search** – Optimized API calls using debouncing
+- 📈 **Trending Movies** – Displays currently trending movies
+- ⚡ **Fast Performance** – Prevents unnecessary API calls and re-renders
+- 🧩 **Reusable Components** – Clean component-based architecture
+- 🔄 **Live Data** – Uses TMDB API for up-to-date movie information
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React**
+- **JavaScript (ES6+)**
+- **HTML5 & CSS3**
+- **TMDB API**
+- **Fetch API**
+- **React Hooks**
+  - `useState`
+  - `useEffect`
+
+---
+
+## 🧠 Concepts Implemented
+
+### 1️⃣ State Management
+- Used `useState` to manage:
+  - Search input
+  - Movies list
+  - Loading and error states
+
+### 2️⃣ Props
+- Passed data and callback functions between components
+- Maintains **unidirectional data flow**
+
+### 3️⃣ Debouncing
+- Implemented debouncing to delay API calls until the user stops typing
+- Improves performance and reduces unnecessary network requests
+
+### 4️⃣ API Integration
+- Fetches movie data from **TMDB**
+- Handles:
+  - Loading state
+  - Error scenarios
+  - Empty results
+
+### 5️⃣ Conditional Rendering
+- Displays loaders, error messages, or movie lists based on state
+
+---
+
+## 📂 Project Structure
+
+```txt
+src/
+│── components/
+│   ├── SearchBar.jsx
+│   ├── MovieCard.jsx
+│   ├── MovieList.jsx
+│
+│── hooks/
+│   └── useDebounce.js
+│
+│── services/
+│   └── api.js
+│
+│── App.js
+│── index.js
